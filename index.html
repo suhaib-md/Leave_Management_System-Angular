@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leave Management System</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-app="leaveApp">
+    <div ng-app="leaveApp" ng-controller="LeaveController">
+        <h1>Leave Management System</h1>
+        <div id="leave-application">
+          <!-- Leave application form -->
+          <h2>Apply for Leave</h2>
+          <form ng-submit="applyLeave()">
+            <label for="leaveType">Leave Type:</label>
+            <select ng-model="leaveType" ng-options="type for type in leaveTypes"></select>
+      
+            <label for="startDate">Start Date:</label>
+            <input type="date" ng-model="startDate">
+      
+            <label for="endDate">End Date:</label>
+            <input type="date" ng-model="endDate"><br><br>
+      
+            <button type="submit">Apply</button>
+          </form>
+        </div>
+        
+        <div id="leave-balance">
+          <!-- Display leave balances -->
+          <h2>Leave Balances</h2>
+          <p>Casual Leave: {{ casualLeaveBalance }} days</p>
+          <p>Medical Leave: {{ medicalLeaveBalance }} days</p>
+        </div>
+      </div>
+      
+
+  <script src="app.js"></script>
+</body>
+</html>
